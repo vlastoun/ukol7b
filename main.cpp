@@ -28,8 +28,8 @@ int main(){
         if ( cin.fail() || (cin.peek() != '\r' && cin.peek() != '\n')){
             cout << "Nespravny vstup." << endl;
         } else if (hexValidation(input)){
-            stringstream(input) >> hex >> decNumber;
-            cout << !"Desitkove: " << decNumber << endl;
+            stringstream(input) >> std::hex >> decNumber;
+            cout << decNumber << endl;
         }else {
             cout << "Nespravny vstup." << endl;
         }
