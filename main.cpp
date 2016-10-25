@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -11,7 +12,7 @@ bool hexValidation (string str){
             citac++;
         }
     }
-    if (citac == i){
+    if (citac == size){
         return 1;
     } else {
         return 0;
@@ -20,16 +21,17 @@ bool hexValidation (string str){
 }
 
 int main(){
-
-cout << "Zadejte cislo:" << endl;
-string input;
-    cin >> input;
-    if ( cin.fail() || (cin.peek() != '\r' && cin.peek() != '\n')){
-        cout << "Chybne zadani." << endl;
-    } else if (hexValidation(input)){
-        cout << input << " : Spravne zadane cislo."<< endl;
-    } else {
-
-    }
-return 0;
+    cout << "Zadejte cislo:" << endl;
+    string input;
+    int decnumber;
+        cin >> input;
+        if ( cin.fail() || (cin.peek() != '\r' && cin.peek() != '\n')){
+            cout << "Nespravny vstup." << endl;
+        } else if (hexValidation(input)){
+            stringstream(input) >> hex >> decnumber;
+            cout << !"Desitkove: " << decnumber << endl;
+        }else {
+            cout << "Nespravny vstup." << endl;
+        }
+    return 0;
 }
