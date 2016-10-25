@@ -21,15 +21,15 @@ bool hexValidation (string str){
 }
 
 int main(){
-    cout << "Zadejte cislo:" << endl;
+    cout << "Zadejte hexadecimalni cislo:" << endl;
     string input;
-    int decnumber;
+    int decNumber;
         cin >> input;
         if ( cin.fail() || (cin.peek() != '\r' && cin.peek() != '\n')){
             cout << "Nespravny vstup." << endl;
         } else if (hexValidation(input)){
-            stringstream(input) >> hex >> decnumber;
-            cout << !"Desitkove: " << decnumber << endl;
+            stringstream(input) >> std::hex >> decNumber;
+            cout<< "Desitkove: " << decNumber << endl;
         }else {
             cout << "Nespravny vstup." << endl;
         }
