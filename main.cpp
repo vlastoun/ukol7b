@@ -21,7 +21,7 @@ bool hexValidation (string str){
 }
 
 int main(){
-    cout << "Zadejte cislo:" << endl;
+    cout << "Zadejte hexadecimalni cislo:" << endl;
     string input;
     int decNumber;
         cin >> input;
@@ -29,7 +29,7 @@ int main(){
             cout << "Nespravny vstup." << endl;
         } else if (hexValidation(input)){
             stringstream(input) >> std::hex >> decNumber;
-            cout << decNumber << endl;
+            cout<< "Desitkove: " << decNumber << endl;
         }else {
             cout << "Nespravny vstup." << endl;
         }
